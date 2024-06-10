@@ -14,8 +14,28 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ["Oswald", ...defaultTheme.fontFamily.sans],
+                display: ["Figtree Display", "sans-serif"],
+                logo: ["Suez One", "bold", "sans-serif"],
+                h1: ["Suez One", "bold", "sans-serif"],
+                h3: ["Figtree", "sans-serif"],
+                nav: ["Figtree", "sans-serif"],
+                p: ["Figtree", "sans-serif"],
             },
+        },
+
+        colors: {
+            // Vos couleurs personnalisées ici
+            // #0E9471 Vert P
+            // #138EC6 bleu P
+            // #313C58 Gris P
+            // #EEEDF2 Arrière plan P
+
+            vertp: "#0E9471",
+            bleup: "#138EC6",
+            grisp: "#313C58",
+            arpp: "#eeedf2",
+            blancp: "#FFFFFF",
         },
     },
 

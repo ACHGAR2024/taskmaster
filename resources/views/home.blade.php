@@ -31,30 +31,56 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Suez+One&display=swap"
+        rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased bg-slate-900">
+<body class="font-sans antialiased bg-arpp
+">
     <div class="min-h-screen bg-slate-900 dark:bg-gray-900">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
         @isset($header)
             <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class=" max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
             </header>
         @endisset
-        <main>
+        <main class="">
             <!-- Page Content -->
 
             <!-- Hero Section -->
-            <section class="bg-gray-900 dark:bg-gray-900">
-
+            <section class="flex flex-col md:flex-row bg-gray-900 dark:bg-gray-900">
+                <div id="image" class="order-first md:order-last bg-vertp w-full md:w-1/2 h-64 md:h-screen right-0">
+                    <img src="{{ asset('storage/photos/') }}/tasks.png" alt="Heroes"
+                        class="w-full h-full object-cover ">
+                </div>
+                <div id="text"
+                    class="order-last md:order-first bg-bleup w-full md:w-1/2 h-auto md:h-screen left-0 p-12">
+                    <h1 class="text-4xl font-bold mb-4 text-blancp p-4">Gestion de tâches</h1>
+                    <h3 class="text-lg mb-4 text-blancp p-4">
+                        un site de gestion de tâches collaboratif peut non seulement améliorer la productivité interne,
+                        mais aussi aider à atteindre plusieurs objectifs stratégiques.
+                    </h3>
+                    <div class="text-right">
+                        <a href="{{ route('home') }}"
+                            class="bg-vertp right-0  border-solid border-2 border-bleup hover:bg-grisp hover:text-white drop-shadow-lg text-blancp font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">En
+                            savoir plus
+                        </a>
+                    </div>
+                </div>
             </section>
+
         </main>
     </div>
 
