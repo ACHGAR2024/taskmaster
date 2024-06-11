@@ -1,16 +1,14 @@
 <?php
 
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\AproposController;
->>>>>>> origin/rachid1
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\SkillController;
-
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactsController;
@@ -27,6 +25,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/apropos', [AproposController::class, 'index'])->name('apropos');
 
 
+// Lignes Gestion routes blog
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::middleware('auth')->group(function () {
+    Route::resource('blogs', BlogController::class);
+});
 
 
 Route::middleware('auth')->group(function () {
