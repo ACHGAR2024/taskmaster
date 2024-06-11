@@ -1,11 +1,14 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\UserController;
-
 use App\Http\Controllers\SkillController;
-
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactsController;
@@ -16,6 +19,12 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 // lignes Gestion routes home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+// Lignes Gestion routes blog
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::middleware('auth')->group(function () {
+    Route::resource('blogs', BlogController::class);
+});
 
 
 Route::middleware('auth')->group(function () {

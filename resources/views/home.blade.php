@@ -78,6 +78,17 @@
                             savoir plus
                         </a>
                     </div>
+
+                    <h1 class="text-4xl font-bold mb-4 text-blancp p-4">Blog</h1>
+                    <h3 class="text-lg mb-4 text-blancp p-4">
+                        Retrouvez les dernières mises à jour.
+                    </h3>
+                    <div class="text-right">
+                        <a href="{{ route('blog.index') }}"
+                            class="bg-vertp right-0  border-solid border-2 border-bleup hover:bg-grisp hover:text-white drop-shadow-lg text-blancp font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">En
+                            savoir plus
+                        </a>
+                    </div>
                 </div>
             </section>
 
