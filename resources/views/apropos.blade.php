@@ -62,26 +62,32 @@
             <!-- Hero Section -->
             <section class="flex flex-col md:flex-row bg-gray-900 dark:bg-gray-900">
                 <div id="image" class="order-first md:order-last bg-vertp w-full md:w-1/2 h-64 md:h-screen right-0">
-                    <img src="{{ asset('storage/photos/') }}/tasks.png" alt="Heroes"
-                        class="w-full h-full object-cover ">
+                    <img src="https://picsum.photos/700/500" alt="Random Image 1" class="w-full h-full object-cover">
                 </div>
                 <div id="text"
                     class="order-last md:order-first bg-bleup w-full md:w-1/2 h-auto md:h-screen left-0 p-12">
-                    <h1 class="text-4xl font-bold mb-4 text-blancp p-4">Gestion de tâches</h1>
+                    <h1 class="text-4xl font-bold mb-4 text-blancp p-4">À propos de nous</h1>
                     <h3 class="text-lg mb-4 text-blancp p-4">
-                        un site de gestion de tâches collaboratif peut non seulement améliorer la productivité interne,
-                        mais aussi aider à atteindre plusieurs objectifs stratégiques.
+                        TaskMaster est une solution innovante de gestion de tâches collaborative, conçue pour améliorer
+                        la productivité interne et aider les entreprises à atteindre leurs objectifs stratégiques. Notre
+                        plateforme offre une variété de fonctionnalités pour faciliter la gestion des projets et des
+                        équipes.
                     </h3>
-                    <div class="text-right">
-                        <a href="{{ route('apropos') }}"
-                            class="bg-vertp right-0  border-solid border-2 border-bleup hover:bg-grisp hover:text-white drop-shadow-lg text-blancp font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">En
-                            savoir plus
-                        </a>
-                    </div>
-
+                    <h3 class="text-lg mb-4 text-blancp p-4">
+                        Fondée sur des principes d'efficacité et de collaboration, TaskMaster permet à ses utilisateurs
+                        de suivre les progrès, de définir des priorités et de coordonner les efforts en temps réel.
+                        Notre mission est de simplifier le travail d'équipe et d'optimiser la performance
+                        organisationnelle.
+                    </h3>
+                    <h3 class="text-lg mb-4 text-blancp p-4">
+                        Nous croyons en la puissance de la technologie pour transformer la manière dont les entreprises
+                        fonctionnent. C'est pourquoi nous investissons continuellement dans l'innovation et
+                        l'amélioration de notre plateforme, afin de fournir les meilleurs outils à nos utilisateurs.
+                    </h3>
 
                 </div>
             </section>
+
 
         </main>
     </div>
