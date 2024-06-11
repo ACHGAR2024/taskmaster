@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Role;
+use App\Models\Task;
+use App\Models\Group;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Validation\Rule;
 
 class User extends Authenticatable
 {
@@ -16,6 +19,7 @@ class User extends Authenticatable
         'image',
         'email',
         'password',
+        'group_id',
     ];
 
     protected $hidden = [
@@ -92,5 +96,23 @@ class User extends Authenticatable
         if ($this->getOriginal('image')) {
             Storage::disk('public')->delete($this->getOriginal('image'));
         }
+    }
+
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
+
+
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class, 'assign', 'user_id', 'task_id');
     }
 }
