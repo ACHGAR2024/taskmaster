@@ -27,11 +27,12 @@ Route::get('/apropos', [AproposController::class, 'index'])->name('apropos');
 
 
 // Lignes Gestion routes blog
-
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+
 Route::middleware('auth')->group(function () {
     Route::resource('blogs', BlogController::class);
 });
+
 
 
 Route::middleware('auth')->group(function () {
