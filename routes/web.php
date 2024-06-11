@@ -36,11 +36,18 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
 
-    // Gestion Kanban
+    // Routes pour les groupes
     Route::resource('groups', GroupController::class);
-    Route::post('groups/{group}/users', [GroupController::class, 'addUser'])->name('groups.addUser');
-    Route::resource('columns', ColumnController::class)->except(['index', 'create', 'edit', 'show']);
-    Route::resource('tasks', TaskController::class)->except(['index', 'create', 'edit', 'show']);
+
+    // Routes pour les colonnes
+    Route::post('groups/{group}/columns', [ColumnController::class, 'store'])->name('columns.store');
+    Route::patch('columns/{column}', [ColumnController::class, 'update'])->name('columns.update');
+    Route::delete('columns/{column}', [ColumnController::class, 'destroy'])->name('columns.destroy');
+
+    // Routes pour les tâches
+    Route::post('columns/{column}/tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::patch('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+    Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
 
     // lignes Gestion routes user

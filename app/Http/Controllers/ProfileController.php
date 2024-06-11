@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\ProfileUpdateRequest; // Assuming you have a validation request for profile updates
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Http\Requests\ProfileUpdateRequest; // Assuming you have a validation request for profile updates
 
 class ProfileController extends Controller
 {
