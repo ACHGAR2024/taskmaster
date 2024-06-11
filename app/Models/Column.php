@@ -11,7 +11,7 @@ class Column extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['column_name', 'index'];
+    protected $fillable = ['column_name', 'index', 'group_id'];
 
     /**
      * Get the group that owns the column.
