@@ -7,17 +7,18 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\PostController;
 
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ColumnController;
+use App\Http\Controllers\AproposController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\RechercherHeroesController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\GroupController;
-use App\Http\Controllers\ColumnController;
-use App\Http\Controllers\TaskController;
 
 
 // lignes Gestion routes home

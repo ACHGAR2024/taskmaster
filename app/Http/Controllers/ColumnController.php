@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ColunmController extends Controller
+class ColumnController extends Controller
 {
     //
 }
