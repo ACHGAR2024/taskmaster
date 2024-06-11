@@ -105,14 +105,13 @@ class User extends Authenticatable
     }
 
 
-    public function group()
+    public function groups()
     {
-        return $this->belongsTo(Group::class);
+        return $this->belongsToMany(Group::class, 'group_user', 'user_id', 'group_id');
     }
-
 
     public function tasks()
     {
-        return $this->belongsToMany(Task::class, 'assign', 'user_id', 'task_id');
+        return $this->belongsToMany(Task::class, 'task_user', 'user_id', 'task_id');
     }
 }
