@@ -7,18 +7,18 @@
 
         <!-- Email Address -->
         <div class="bg-green dark:bg-red">
-            <x-input-label for="email" :value="__('Email')" class="text-white font-bold mb-2" />
+            <x-input-label for="email" :value="__('Email')" class="text-blancp font-bold mb-2" />
             <x-text-input id="email"
-                class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-noirp"
                 type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2 text-red-600" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Mot de passe')" class="text-white font-bold mb-2" />
+            <x-input-label for="password" :value="__('Mot de passe')" class="text-blancp font-bold mb-2" />
             <x-text-input id="password"
-                class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                class="block mt-1 w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-noirp"
                 type="password" name="password" required autocomplete="current-password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2 text-red-600" />
         </div>
@@ -27,7 +27,7 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-noirp"
                     name="remember">
                 <span class="ms-2 text-sm text-cyan-100">{{ __('Se souvenir de moi') }}</span>
             </label>
@@ -43,7 +43,7 @@
 
             <div class="ml-4">
                 <button
-                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{{ __('Connexion') }}</button>
+                    class="bg-green-500 hover:bg-green-700 text-blancp font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{{ __('Connexion') }}</button>
             </div>
 
         </div>

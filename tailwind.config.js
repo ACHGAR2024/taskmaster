@@ -36,6 +36,8 @@ export default {
             grisp: "#313C58",
             arpp: "#eeedf2",
             blancp: "#FFFFFF",
+            noirp: "#000000",
+            rougep: "#ff0000",
         },
     },
 

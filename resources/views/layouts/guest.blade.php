@@ -24,16 +24,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-black antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-900 dark:bg-gray-900">
+<body class="font-sans text-blancp antialiased bg-arpp">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-2 sm:pt-0 bg-gray-900 dark:bg-gray-900">
         <div>
             <a href="/">
-                <img src="./storage/photos/logo.png" alt="Heroes" class="w-20 h-20 object-cover ">
+                <img src="./storage/photos/logo.png" alt="Heroes" class="w-24 h-24 object-cover ">
             </a>
         </div>
 
         <div
-            class="w-full sm:max-w-md mt-6 px-6 py-4 bg-rgb(32 137 195) dark:bg-sky-950 shadow-md overflow-hidden sm:rounded-lg text-black">
+            class="w-full sm:max-w-md mt-2 px-6 py-3 bg-grisp dark:bg-sky-950 shadow-md overflow-hidden sm:rounded-lg text-blancp ">
 
             {{ $slot }}
 

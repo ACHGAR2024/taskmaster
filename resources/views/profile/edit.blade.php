@@ -4,9 +4,9 @@
     <!-- Update Profile Information Form -->
 
 
-    <div class="py-12 ">
+    <div class="py-12 mb-32">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-gray-400 dark:bg-sky-950 shadow sm:rounded-lg">
+            <div class="p-4 sm:p-8 bg-grisp dark:bg-sky-950 shadow sm:rounded-lg">
                 <div class="max-w-xl">
 
 
@@ -14,13 +14,13 @@
                     <div>
                         <image class="w-24 h-24 rounded-full" src="{{ asset('storage/' . $user->image) }}"></image>
                     </div>
-                    <section>
+                    <section class="text-blancp">
                         <header>
-                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                            <h2 class="text-lg font-medium text-blancp dark:text-blancp">
                                 {{ __('Informations du profil') }}
                             </h2>
 
-                            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            <p class="mt-1 text-sm text-blancp dark:text-blancp">
                                 {{ __("Mettez à jour les informations de profil de votre compte et l'adresse email.") }}
                             </p>
                         </header>
@@ -38,24 +38,26 @@
 
                             <div>
                                 <x-input-label for="pseudo" :value="__('Pseudo')" />
-                                <x-text-input id="pseudo" name="pseudo" type="text" class="mt-1 block w-full"
-                                    :value="old('pseudo', $user->pseudo)" required autofocus autocomplete="name" />
-                                <x-input-error class="mt-2" :messages="$errors->get('pseudo')" />
+                                <x-text-input id="pseudo" name="pseudo" type="text"
+                                    class="text-noirp mt-1 block w-full" :value="old('pseudo', $user->pseudo)" required autofocus
+                                    autocomplete="name" />
+                                <x-input-error class="mt-2  text-vertp" :messages="$errors->get('pseudo')" />
                             </div>
 
                             <div>
                                 <x-input-label for="image" :value="__('Image Avatar')" />
                                 <x-text-input id="image" name="image" type="file" class="mt-1 block w-full"
                                     accept="image/jpeg,image/png" :value="old('image', $user->image)" />
-                                <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                                <x-input-error class="mt-2  text-vertp" :messages="$errors->get('image')" />
                                 <span class="text-sm text-gray-500 dark:text-gray-400">Ajoutez une image (JPG ou PNG, 1 Mo
                                     max)</span>
                             </div>
 
                             <div>
                                 <x-input-label for="email" :value="__('Email')" />
-                                <x-text-input id="email" name="email" type="email" class="mt-1 block w-full"
-                                    :value="old('email', $user->email)" required autocomplete="username" />
+                                <x-text-input id="email" name="email" type="email"
+                                    class="text-noirp mt-1 block w-full" :value="old('email', $user->email)" required
+                                    autocomplete="username" />
                                 <x-input-error class="mt-2" :messages="$errors->get('email')" />
                             </div>
                             <div class="text-center">
@@ -74,10 +76,10 @@
                 </div>
             </div>
 
-            <div class="p-4 sm:p-8 bg-gray-400 dark:bg-sky-950 shadow sm:rounded-lg">
+            <div class="p-4 sm:p-8 bg-grisp dark:bg-grisp shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <!-- Update Password Form -->
-                    <section>
+                    <section class="text-blancp">
                         <header>
                             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
                                 {{ __('Mise à jour du mot de passe ') }}
@@ -95,22 +97,22 @@
                             <div>
                                 <x-input-label for="current_password" :value="__('Mot de passe actuel')" />
                                 <x-text-input id="current_password" name="current_password" type="password"
-                                    class="mt-1 block w-full" autocomplete="current-password" />
-                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
+                                    class="text-noirp mt-1 block w-full" autocomplete="current-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2  text-vertp" />
                             </div>
 
                             <div>
                                 <x-input-label for="password" :value="__('Nouveau mot de passe')" />
-                                <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
-                                    autocomplete="new-password" />
-                                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
+                                <x-text-input id="password" name="password" type="password"
+                                    class="text-noirp mt-1 block w-full" autocomplete="new-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2  text-vertp" />
                             </div>
 
                             <div>
                                 <x-input-label for="password_confirmation" :value="__('Confirmation de mot de passe')" />
                                 <x-text-input id="password_confirmation" name="password_confirmation" type="password"
-                                    class="mt-1 block w-full" autocomplete="new-password" />
-                                <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
+                                    class=" text-noirp pmt-1 block w-full" autocomplete="new-password" />
+                                <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2  text-vertp" />
                             </div>
 
                             <div class="flex items-center gap-4">
@@ -126,10 +128,10 @@
                 </div>
             </div>
 
-            <div class="p-4 sm:p-8 bg-gray-400 dark:bg-sky-950 shadow sm:rounded-lg">
+            <div class="p-4 sm:p-8 bg-grisp  dark:bg-grisp shadow sm:rounded-lg">
                 <div class="max-w-xl">
                     <!-- Delete User Form -->
-                    <section class="space-y-6">
+                    <section class="space-y-6 text-blancp">
                         <header>
                             <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
                                 {{ __('Supprimer le compte') }}
@@ -146,13 +148,13 @@
 
                             <div>
                                 <x-input-label for="password" :value="__('Mot de passe')" />
-                                <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
-                                    autocomplete="current-password" />
-                                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                                <x-text-input id="password" name="password" type="password"
+                                    class="text-noirp mt-1 block w-full" autocomplete="current-password" />
+                                <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2 text-vertp" />
                             </div>
 
                             <div class="flex justify-end">
-                                <x-danger-button>
+                                <x-danger-button style="background-color: crimson">
                                     {{ __('Supprimer le compte') }}
                                 </x-danger-button>
                             </div>
