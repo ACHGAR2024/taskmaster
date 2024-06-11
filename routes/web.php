@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\HomeController;
@@ -12,13 +13,26 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\RechercherHeroesController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\ColumnController;
+use App\Http\Controllers\TaskController;
+
 
 // lignes Gestion routes home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
+
 Route::middleware('auth')->group(function () {
+
+    // Gestion Kanban
+    Route::resource('groups', GroupController::class);
+    Route::post('groups/{group}/users', [GroupController::class, 'addUser'])->name('groups.addUser');
+    Route::resource('columns', ColumnController::class)->except(['index', 'create', 'edit', 'show']);
+    Route::resource('tasks', TaskController::class)->except(['index', 'create', 'edit', 'show']);
+
+
     // lignes Gestion routes user
     Route::resource('user', UserController::class);
     Route::patch('user/{user}/toggle-role', [UserController::class, 'toggleRole'])->name('user.toggleRole');
