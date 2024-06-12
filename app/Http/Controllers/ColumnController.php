@@ -23,4 +23,12 @@ class ColumnController extends Controller
 
         return redirect()->route('home')->with('success', 'Colonne créée avec succès.');
     }
+    public function index()
+    {
+        // Récupérer toutes les colonnes avec leurs tâches
+        $columns = Column::with('taches')->get();
+
+        // Passer les colonnes à la vue
+        return view('taches.index', compact('columns'));
+    }
 }
