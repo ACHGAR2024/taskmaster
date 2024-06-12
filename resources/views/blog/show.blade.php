@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Encyclopédie Héros Marvel</title>
+    <title>TaskMaster</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="[Rachid EL ACHGAR]">
@@ -90,8 +90,8 @@
                                         <button class="px-6 py-2 text-blancp bg-bleup rounded hover:bg-vertp">
                                             <a href="{{ route('blogs.edit', $blog->id) }}" class="block w-full h-full">
                                                 {{ __('Modifier
-                                                                                                                                                                                                                                                                                                                                            mon
-                                                                                                                                                                                                                                                                                                                                            post') }}
+                                                                                                                                                                                                                                                                                                                                                                                            mon
+                                                                                                                                                                                                                                                                                                                                                                                            post') }}
                                             </a>
                                         </button>
 
