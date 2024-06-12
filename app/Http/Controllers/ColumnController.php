@@ -1,51 +1,28 @@
 <?php
-/*namespace App\Http\Controllers;
-
-use App\Models\Column;
-use Illuminate\Http\Request;
-
-class ColumnController extends Controller
-{
-    public function create()
-    {
-        return view('columns.create');
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|unique:columns|max:255',
-        ]);
-
-        Column::create([
-            'name' => $request->name,
-        ]);
-
-        return redirect()->route('home')->with('success', 'Colonne créée avec succès.');
-    }
-}*/
 
 
 namespace App\Http\Controllers;
 
-use App\Models\Column;
 use App\Models\Group;
+use App\Models\Column;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ColumnController extends Controller
 {
-    public function store(Request $request, Group $group)
+    public function store(Request $request)
     {
         // Valider les données de la requête
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'index' => 'required|integer',
+            'group_id' => 'required|exists:groups,id', // Valider que group_id existe dans la table groups
         ]);
 
         // Créer la colonne avec les données validées
-        $column = $group->columns()->create($validatedData);
+        $column = Column::create($validatedData);
 
-        return redirect()->route('groups.show', $group);
+        return redirect()->route('groups.show', $validatedData['group_id']);
     }
 
     public function update(Request $request, Column $column)
@@ -59,7 +36,7 @@ class ColumnController extends Controller
         // Mettre à jour la colonne avec les données validées
         $column->update($validatedData);
 
-        return redirect()->route('groups.show', $column->group);
+        return redirect()->route('groups.show', $column->group_id);
     }
 
     public function destroy(Column $column)

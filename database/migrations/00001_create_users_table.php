@@ -18,14 +18,12 @@ return new class extends Migration {
             $table->rememberToken();
             $table->timestamps();
 
+
             $table->unsignedBigInteger('role_id')->default(2);
-            $table->unsignedBigInteger('group_id')->nullable();
-
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('set null');
-
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
+    
 
     public function down()
     {
