@@ -24,7 +24,7 @@ class ColumnController extends Controller
         return redirect()->route('home')->with('success', 'Colonne créée avec succès.');
     }
 }*/
-<?php
+
 
 namespace App\Http\Controllers;
 
