@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Tache;
@@ -9,13 +10,16 @@ class TacheController extends Controller
 {
     public function index()
     {
-        $taches = Tache::all();
-        return view('taches.index', compact('taches'));
+        // Récupérer toutes les colonnes avec leurs tâches
+        $columns = Column::with('taches')->get();
+
+        // Passer les colonnes à la vue
+        return view('taches.index', compact('columns'));
     }
 
     public function create()
     {
-        $columns = Column::all(); // Récupérer toutes les colonnes depuis la base de données
+        $columns = Column::all();
         return view('taches.create', compact('columns'));
     }
 
@@ -32,45 +36,50 @@ class TacheController extends Controller
         return redirect()->route('taches.index')
             ->with('success', 'Tâche créée avec succès.');
     }
+
     public function show($tacheId)
     {
-        $tache = Tache::findOrFail($tacheId); // Trouver la tâche par son ID
+        $tache = Tache::findOrFail($tacheId);
         return view('taches.show', compact('tache'));
     }
-
 
     public function edit($tacheId)
     {
         $tache = Tache::findOrFail($tacheId);
-        $columns = Column::all(); // Récupérez les colonnes à partir de votre modèle de colonne ou d'une autre source de données
-
+        $columns = Column::all();
         return view('taches.edit', compact('tache', 'columns'));
     }
 
-
-
-    public function update(Request $request, Tache $tache)
+    public function update(Request $request, $id) // Maintenant, reçoit les deux arguments
     {
-        // Validation des données
-        $validatedData = $request->validate([
+        $tache = Tache::findOrFail($id);
+        $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'column_id' => 'required|exists:columns,id',
         ]);
-
-        // Mise à jour de la tâche
-        $tache->update($validatedData);
-
-        // Redirection vers la page de détails de la tâche
-        return redirect()->route('taches.show');
-    }
-
-
-    public function destroy(Tache $tache)
-    {
-        $tache->delete();
-
+        //dd($tache);
+        $tache->update($request->all());
+        //dd($request);
         return redirect()->route('taches.index')
-            ->with('success', 'Tâche supprimée avec succès.');
+            ->with('success', 'Tâche modifiée avec succès.');
     }
+
+
+
+    public function destroy($id)
+    {
+        $tache = Tache::findOrFail($id);
+        $tache->delete();
+        return redirect()->back()->withErrors(['erreur' => 'Suppression du compte réussie.']);
+
+    }
+
+    /*    public function destroy(Tache $tache)
+        {
+            $tache->delete();
+
+            return redirect()->route('taches.index')
+                ->with('success', 'Tâche supprimée avec succès.');
+        }*/
 }

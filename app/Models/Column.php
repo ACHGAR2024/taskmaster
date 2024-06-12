@@ -22,4 +22,8 @@ class Column extends Model
     {
         return $this->hasMany(Task::class);
     }
+    public function taches()
+    {
+        return $this->hasMany(Tache::class);
+    }
 }
