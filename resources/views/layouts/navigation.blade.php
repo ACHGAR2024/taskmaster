@@ -103,19 +103,29 @@
 
                     @if (route('home') == request()->url())
                         <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                            {{ __('Acceuil') }}
+                            {{ __('Accueil') }}
                         </x-nav-link>
                     @else
                         <a href="{{ route('home') }}"
                             class="block py-2 px-3 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                            {{ __('Acceuil') }}
+                            {{ __('Accueil') }}
                         </a>
                     @endif
 
 
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('taches.index') }}">Tâches</a>
+                <li>
+                    @if (route('taches.index') == request()->url())
+                        <x-nav-link :href="route('taches.index')" :active="request()->routeIs('taches.index')">
+                            {{ __('Tâches') }}
+                        </x-nav-link>
+                    @else
+                        <a href="{{ route('taches.index') }}"
+                            class="block py-2 px-3 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            {{ __('Tâches') }}
+                        </a>
+                    @endif
+
                 </li>
                 <li>
                     @if (route('blog.index') == request()->url())

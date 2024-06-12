@@ -40,7 +40,10 @@ Route::middleware('auth')->group(function () {
 
     // Gestion Tâches 
     Route::resource('taches', TacheController::class);
-    Route::put('/taches/{tache}', [TacheController::class, 'update'])->name('taches.update');
+    //Route::put('/taches/{tache}', [TacheController::class, 'update'])->name('taches.update');
+    // Définition de la route
+    Route::patch('/taches/{id}', 'TacheController@update')->name('taches.update');
+    Route::get('/taches', [TacheController::class, 'index'])->name('taches.index');
 
 
 
