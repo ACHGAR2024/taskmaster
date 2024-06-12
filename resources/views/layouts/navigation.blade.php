@@ -62,14 +62,10 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
                     </li>
-                    <li>
 
-                    </li>
-                    <li>
 
-                    </li>
                     <li>
-                        <x-dropdown-link :href="route('contacts.index')"
+                        <x-dropdown-link :href="route('contacts.show')"
                             class="w-full h-9 bg-slate-700 rounded-lg text-blancp  hover:text-black hover:font-extrabold">
                             {{ __('Messages') }}
                         </x-dropdown-link>
@@ -118,13 +114,19 @@
 
 
                 </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                        Tâches
-                    </a>
-                </li>
 
+                <li>
+                    @if (route('blog.index') == request()->url())
+                        <x-nav-link :href="route('blog.index')" :active="request()->routeIs('blog.index')">
+                            {{ __('Blog') }}
+                        </x-nav-link>
+                    @else
+                        <a href="{{ route('blog.index') }}"
+                            class="block py-2 px-3 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            {{ __('Blog') }}
+                        </a>
+                    @endif
+                </li>
                 <li>
                     @if (route('apropos') == request()->url())
                         <x-nav-link :href="route('apropos')" :active="request()->routeIs('apropos')">

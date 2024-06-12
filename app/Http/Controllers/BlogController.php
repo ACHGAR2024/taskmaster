@@ -104,10 +104,10 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        $blog = Blog::findOrFail($blog);
         $blog->delete();
 
         return redirect()->route('blog.index')
             ->with('success', 'Post supprimé avec succès!');
     }
+
 }
