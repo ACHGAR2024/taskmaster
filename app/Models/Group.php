@@ -11,21 +11,15 @@ class Group extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'date'];
+    protected $fillable = ['name'];
 
-    /**
-     * Get the columns for the group.
-     */
     public function columns()
     {
         return $this->hasMany(Column::class);
     }
 
-    /**
-     * Get the users for the group.
-     */
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class, 'group_user', 'group_id', 'user_id');
     }
 }

@@ -11,19 +11,13 @@ class Column extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['column_name', 'index', 'group_id'];
+    protected $fillable = ['name', 'index', 'group_id'];
 
-    /**
-     * Get the group that owns the column.
-     */
     public function group()
     {
         return $this->belongsTo(Group::class);
     }
 
-    /**
-     * Get the tasks for the column.
-     */
     public function tasks()
     {
         return $this->hasMany(Task::class);

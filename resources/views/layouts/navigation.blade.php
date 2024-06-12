@@ -69,7 +69,7 @@
 
                     </li>
                     <li>
-                        <x-dropdown-link :href="route('contacts.show')"
+                        <x-dropdown-link :href="route('contacts.index')"
                             class="w-full h-9 bg-slate-700 rounded-lg text-blancp  hover:text-black hover:font-extrabold">
                             {{ __('Messages') }}
                         </x-dropdown-link>
@@ -124,12 +124,7 @@
                         Tâches
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('blog.index') }}"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                        Blog
-                    </a>
-                </li>
+
                 <li>
                     @if (route('apropos') == request()->url())
                         <x-nav-link :href="route('apropos')" :active="request()->routeIs('apropos')">
