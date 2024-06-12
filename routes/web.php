@@ -19,6 +19,7 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\RechercherHeroesController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\TacheController;
 
 
 // lignes Gestion routes home
@@ -36,6 +37,17 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+
+    // Gestion Tâches 
+    Route::resource('taches', TacheController::class);
+    Route::put('/taches/{tache}', [TacheController::class, 'update'])->name('taches.update');
+
+
+
+    // Ajout Columns
+    Route::resource('columns', ColumnController::class);
+    Route::get('/columns/create', [ColumnController::class, 'create'])->name('columns.create');
+    Route::post('/columns', [ColumnController::class, 'store'])->name('columns.store');
 
     // Gestion Kanban
     Route::resource('groups', GroupController::class);

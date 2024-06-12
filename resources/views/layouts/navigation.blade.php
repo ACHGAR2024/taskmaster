@@ -62,12 +62,8 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
                     </li>
-                    <li>
 
-                    </li>
-                    <li>
 
-                    </li>
                     <li>
                         <x-dropdown-link :href="route('contacts.show')"
                             class="w-full h-9 bg-slate-700 rounded-lg text-blancp  hover:text-black hover:font-extrabold">
@@ -118,11 +114,8 @@
 
 
                 </li>
-                <li>
-                    <a href="#"
-                        class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                        Tâches
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('taches.index') }}">Tâches</a>
                 </li>
                 <li>
                     @if (route('blog.index') == request()->url())
