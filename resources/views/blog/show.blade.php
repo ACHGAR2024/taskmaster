@@ -90,8 +90,8 @@
                                         <button class="px-6 py-2 text-blancp bg-bleup rounded hover:bg-vertp">
                                             <a href="{{ route('blogs.edit', $blog->id) }}" class="block w-full h-full">
                                                 {{ __('Modifier
-                                                                                                                                                                                                                                                                                            mon
-                                                                                                                                                                                                                                                                                            post') }}
+                                                                                                                                                                                                                                                                                                                                            mon
+                                                                                                                                                                                                                                                                                                                                            post') }}
                                             </a>
                                         </button>
 
